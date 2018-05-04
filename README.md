@@ -1,6 +1,8 @@
 
 ## Welcome to my GitHub Page
 
+My name is Byron Jacobs. I am a lecturer at the [University of the Witwatersrand](https://wits.ac.za/staff/academic-a-z-listing/j/byronjacobswitsacza/) in the School of [Computer Science and Applied Mathematics](https://www.wits.ac.za/csam/). 
+
 You can use the [editor on GitHub](https://github.com/ByronJacobs/byronjacobs.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
 
 Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
