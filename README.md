@@ -1,7 +1,7 @@
 
 ## Welcome to my GitHub Page
 
-My name is [Byron Jacobs](https://wits.ac.za/staff/academic-a-z-listing/j/byronjacobswitsacza/). I am a lecturer at the [University of the Witwatersrand](https://wits.ac.za) in the School of [Computer Science and Applied Mathematics](https://www.wits.ac.za/csam/). My research is primarily focused on 
+My name is [Byron Jacobs](https://www.uj.ac.za/contact/Pages/Byron-Jacobs.aspx). I am an Associate Professor at the [University of Johannesburg](https://uj.ac.za) in the School of [Mathematics and Applied Mathematics](https://www.uj.ac.za/faculties/science/mam/). My research is primarily focused on 
 - **Fractional and Partial Differential Equations**, 
 - **Numerical Methods and Analysis** there of, 
 - as well as **Signal and Image Processing**.
@@ -10,4 +10,4 @@ My name is [Byron Jacobs](https://wits.ac.za/staff/academic-a-z-listing/j/byronj
  - [Google Scholar](https://scholar.google.com/citations?user=HHgQJqwAAAAJ&hl=en&oi=sra)
  - [YouTube](https://www.youtube.com/user/5mjacbyr/videos)
  - on Twitter [@ByronJacobsWITS](https://twitter.com/ByronJacobsWITS)
- - [Wits Profile](https://wits.ac.za/staff/academic-a-z-listing/j/byronjacobswitsacza/)
+ - [UJ Profile](https://www.uj.ac.za/contact/Pages/Byron-Jacobs.aspx)
