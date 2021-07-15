@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Chapter 1 Introduction | Numerical Analysis B</title>
+  <meta name="description" content="These are the course notes for the numerical methods honours course taught to applied mathematics students at University of Johannesburg" />
+  <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Chapter 1 Introduction | Numerical Analysis B" />
+  <meta property="og:type" content="book" />
+  
+  
+  <meta property="og:description" content="These are the course notes for the numerical methods honours course taught to applied mathematics students at University of Johannesburg" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Chapter 1 Introduction | Numerical Analysis B" />
+  
+  <meta name="twitter:description" content="These are the course notes for the numerical methods honours course taught to applied mathematics students at University of Johannesburg" />
+  
+
+<meta name="author" content="Byron Jacobs" />
+
+
+<meta name="date" content="2021-07-15" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="taylor-series-revisted.html"/>
+<script src="libs/header-attrs-2.8/header-attrs.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+/* Used with Pandoc 2.11+ new --citeproc when CSL is used */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">APM8X13</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Prerequisites</a></li>
+<li class="chapter" data-level="1" data-path="intro.html"><a href="intro.html"><i class="fa fa-check"></i><b>1</b> Introduction</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="intro.html"><a href="intro.html#course-outline"><i class="fa fa-check"></i><b>1.1</b> Course Outline</a></li>
+<li class="chapter" data-level="1.2" data-path="intro.html"><a href="intro.html#learning-outcomes"><i class="fa fa-check"></i><b>1.2</b> Learning outcomes</a></li>
+<li class="chapter" data-level="1.3" data-path="intro.html"><a href="intro.html#module-descriptor"><i class="fa fa-check"></i><b>1.3</b> Module Descriptor</a></li>
+<li class="chapter" data-level="1.4" data-path="intro.html"><a href="intro.html#lectureconsultation-schedule"><i class="fa fa-check"></i><b>1.4</b> Lecture/Consultation Schedule</a></li>
+<li class="chapter" data-level="1.5" data-path="intro.html"><a href="intro.html#lecturer-contact-details"><i class="fa fa-check"></i><b>1.5</b> Lecturer Contact Details</a></li>
+<li class="chapter" data-level="1.6" data-path="intro.html"><a href="intro.html#additional-resources"><i class="fa fa-check"></i><b>1.6</b> Additional Resources</a>
+<ul>
+<li class="chapter" data-level="1.6.1" data-path="intro.html"><a href="intro.html#pythongoogle-colab"><i class="fa fa-check"></i><b>1.6.1</b> Python/Google Colab</a></li>
+</ul></li>
+<li class="chapter" data-level="1.7" data-path="intro.html"><a href="intro.html#assessments"><i class="fa fa-check"></i><b>1.7</b> Assessments</a>
+<ul>
+<li class="chapter" data-level="1.7.1" data-path="intro.html"><a href="intro.html#assessment-schedule"><i class="fa fa-check"></i><b>1.7.1</b> Assessment schedule</a></li>
+<li class="chapter" data-level="1.7.2" data-path="intro.html"><a href="intro.html#pass-requirements-and-compilation-of-marks"><i class="fa fa-check"></i><b>1.7.2</b> Pass Requirements and Compilation of Marks</a></li>
+</ul></li>
+<li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#rules-and-procedure-for-absence-from-an-assessment"><i class="fa fa-check"></i><b>1.8</b> Rules and Procedure for Absence from an Assessment</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="taylor-series-revisted.html"><a href="taylor-series-revisted.html"><i class="fa fa-check"></i><b>2</b> Taylor Series (Revisted)</a></li>
+<li class="chapter" data-level="3" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html"><i class="fa fa-check"></i><b>3</b> Ordinary Differentiable Equations (ODEs)</a>
+<ul>
+<li class="chapter" data-level="3.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#initial-value-problems"><i class="fa fa-check"></i><b>3.1</b> Initial Value Problems</a>
+<ul>
+<li class="chapter" data-level="3.1.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#stability-of-odes"><i class="fa fa-check"></i><b>3.1.1</b> Stability of ODEs</a></li>
+<li class="chapter" data-level="3.1.2" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#unstable-ode"><i class="fa fa-check"></i><b>3.1.2</b> Unstable ODE</a></li>
+<li class="chapter" data-level="3.1.3" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#stable-ode"><i class="fa fa-check"></i><b>3.1.3</b> Stable ODE</a></li>
+<li class="chapter" data-level="3.1.4" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#neutrally-stable-ode"><i class="fa fa-check"></i><b>3.1.4</b> Neutrally Stable ODE</a></li>
+</ul></li>
+<li class="chapter" data-level="3.2" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#eulers-method"><i class="fa fa-check"></i><b>3.2</b> Euler’s Method</a>
+<ul>
+<li class="chapter" data-level="3.2.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#error-in-eulers-method"><i class="fa fa-check"></i><b>3.2.1</b> Error in Euler’s Method</a></li>
+<li class="chapter" data-level="3.2.2" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#example"><i class="fa fa-check"></i><b>3.2.2</b> Example</a></li>
+</ul></li>
+<li class="chapter" data-level="3.3" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#modified-eulers-method"><i class="fa fa-check"></i><b>3.3</b> Modified Euler’s Method</a></li>
+<li class="chapter" data-level="3.4" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#runge-kutta-methods"><i class="fa fa-check"></i><b>3.4</b> Runge-Kutta Methods</a>
+<ul>
+<li class="chapter" data-level="3.4.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#second-order-runge-kutta-method"><i class="fa fa-check"></i><b>3.4.1</b> Second Order Runge-Kutta Method</a></li>
+<li class="chapter" data-level="3.4.2" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#fourth-order-runge-kutta-method"><i class="fa fa-check"></i><b>3.4.2</b> Fourth Order Runge-Kutta Method</a></li>
+</ul></li>
+<li class="chapter" data-level="3.5" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#multistep-methods"><i class="fa fa-check"></i><b>3.5</b> Multistep Methods</a>
+<ul>
+<li class="chapter" data-level="3.5.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#adam-bashforth-moultonmethod"><i class="fa fa-check"></i><b>3.5.1</b> Adam-Bashforth-MoultonMethod</a></li>
+<li class="chapter" data-level="3.5.2" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#advantages-of-multistep-methods"><i class="fa fa-check"></i><b>3.5.2</b> Advantages of Multistep Methods</a></li>
+</ul></li>
+<li class="chapter" data-level="3.6" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#systems-of-first-order-odes"><i class="fa fa-check"></i><b>3.6</b> Systems of First Order ODEs</a>
+<ul>
+<li class="chapter" data-level="3.6.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#r-k-method-for-systems"><i class="fa fa-check"></i><b>3.6.1</b> R-K Method for Systems</a></li>
+</ul></li>
+<li class="chapter" data-level="3.7" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#converting-an-nth-order-ode-to-a-system-of-first-order-odes"><i class="fa fa-check"></i><b>3.7</b> Converting an <span class="math inline">\(n^{th}\)</span> Order ODE to a System of First Order ODEs</a>
+<ul>
+<li class="chapter" data-level="3.7.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#exercises"><i class="fa fa-check"></i><b>3.7.1</b> Exercises</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html"><i class="fa fa-check"></i><b>4</b> Partial Differential Equations</a>
+<ul>
+<li class="chapter" data-level="4.1" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#classification-of-partial-differential-equations"><i class="fa fa-check"></i><b>4.1</b> Classification of Partial Differential Equations</a></li>
+<li class="chapter" data-level="4.2" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#time-dependent-problems"><i class="fa fa-check"></i><b>4.2</b> Time-Dependent Problems</a></li>
+<li class="chapter" data-level="4.3" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#fully-discrete-methods"><i class="fa fa-check"></i><b>4.3</b> Fully Discrete Methods</a>
+<ul>
+<li class="chapter" data-level="4.3.1" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#explicit-finite-difference-method"><i class="fa fa-check"></i><b>4.3.1</b> Explicit Finite Difference Method</a></li>
+<li class="chapter" data-level="4.3.2" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#sec:BCs"><i class="fa fa-check"></i><b>4.3.2</b> Boundary Conditions</a></li>
+<li class="chapter" data-level="4.3.3" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#sec:implicitFD"><i class="fa fa-check"></i><b>4.3.3</b> Implicit Finite Difference Method</a></li>
+</ul></li>
+<li class="chapter" data-level="4.4" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#consistency-stability-and-convergence"><i class="fa fa-check"></i><b>4.4</b> Consistency, Stability and Convergence</a>
+<ul>
+<li class="chapter" data-level="4.4.1" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#consistency"><i class="fa fa-check"></i><b>4.4.1</b> Consistency</a></li>
+<li class="chapter" data-level="4.4.2" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#von-neumann-stability-analysis"><i class="fa fa-check"></i><b>4.4.2</b> von Neumann Stability Analysis</a></li>
+<li class="chapter" data-level="4.4.3" data-path="partial-differential-equations.html"><a href="partial-differential-equations.html#lax-equivalence-theorem"><i class="fa fa-check"></i><b>4.4.3</b> Lax Equivalence Theorem</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
+<li class="divider"></li>
+<li><a href="https://www.uj.ac.za/faculties/science/mam/Pages/Postgraduate-Studies.aspx" target="blank">University of Johannesburg</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Numerical Analysis B</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="intro" class="section level1" number="1">
+<h1><span class="header-section-number">Chapter 1</span> Introduction</h1>
+<p>Differential equation based mathematical modelling often aims to capture/describe complex phenomenological behaviours. The equations that arise from such a task may be nonlinear in nature or difficult/impossible to solve using analytic methods. As such, a reliable framework for the construction of a numerical scheme for such an equation is paramount. This course explores an approach to constructing, analysing and simulating numerical methods for ordinary and partial differential equations (ODEs and PDEs).</p>
+<div id="course-outline" class="section level2" number="1.1">
+<h2><span class="header-section-number">1.1</span> Course Outline</h2>
+<p>This course will cover</p>
+<ul>
+<li>Taylor Series (Revisted)</li>
+<li>Numerical Solution Methods and Analysis for Ordinary Differential Equations (ODEs)</li>
+<li>Numerical Solution Methods and Analysis for Partial Differential Equations (PDEs)</li>
+</ul>
+</div>
+<div id="learning-outcomes" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Learning outcomes</h2>
+<p>On completion of this course, a student should be able to:</p>
+<ul>
+<li>Expand a function around a give point using the Taylor series</li>
+<li>Construct and analyse a variety numerical methods for ODEs</li>
+<li>Numerically simulate/solve a system of ODEs</li>
+<li>Construct and analyse a variety numerical methods for parabolic PDEs</li>
+<li>Numerically simulate/solve parabolic PDEs</li>
+<li>Interpret a numerical method given in plain mathematics and implement that method in code</li>
+</ul>
+<!-- ## Important Dates -->
+</div>
+<div id="module-descriptor" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Module Descriptor</h2>
+<ul>
+<li>NQF-level: 8</li>
+<li>MQF-credits: 16</li>
+<li>Module type: Semester module</li>
+</ul>
+</div>
+<div id="lectureconsultation-schedule" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Lecture/Consultation Schedule</h2>
+<div class="line-block">Lectures: Tuesday 9:40 - 11:15<br />
+Consultation: Via Email or by appointment</div>
+</div>
+<div id="lecturer-contact-details" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Lecturer Contact Details</h2>
+<div class="line-block">Prof Byron Jacobs<br />
+Mathematics and Applied Mathematics<br />
+Email: <code>byronj@uj.ac.za</code><br />
+Office: B Ring 529, Auckland Park Campus</div>
+</div>
+<div id="additional-resources" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Additional Resources</h2>
+<p>There are many textbooks on the subject of numerical analysis amenable to this course. Many of these textbooks have far greater scope than this course and as such select chapters from the textbooks below should be consulted for enrichment.</p>
+<ul>
+<li>Numerical Analysis - <em>Burden and Faires</em></li>
+<li>Numerical Analysis - <em>T. Sauer</em></li>
+<li>Scientific Computin - <em>M. Heath</em></li>
+</ul>
+<div id="pythongoogle-colab" class="section level3" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Python/Google Colab</h3>
+<p>All aspects of coding and implementation for this course will be done in Python. Specifically, using the Jupyter Notebook framework. Google Colab (<code>https://colab.research.google.com/</code>) is a cloud hosted framework that allows instant access to a Jupyter Notebook. You are welcome to install a local instance of Jupyter Notebook, instructions for how to do so can be found online.</p>
+</div>
+</div>
+<div id="assessments" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Assessments</h2>
+<p>In all assessments, both formative and summative, questions are posed that require the application
+of acquired principles to solve well-defined problems in mathematics.</p>
+<ul>
+<li>Self-assessment: The student is expected to perform self-assessment by completing the activities
+(exercises in text book) at the end of each learning unit.</li>
+<li>Continuous assessment: During and/or after each learning unit the student will be assessed
+(class tests and/or assignments) and these assessments may form part of the semester
+mark.</li>
+<li>Formative assessment: Two major tests and a series of tutorial tests will be written during
+the semester (see Assessment Schedule). These tests will form part of the semester mark.</li>
+<li>Summative assessment: An examination paper at the end of the semester testing all the
+content covered in class. The exam will 50% towards the final mark.</li>
+</ul>
+<p>The semester mark together with the examination mark will constitute the final pass mark.
+The student will be pronounced competent/ not yet component, based on the final pass mark
+obtained.</p>
+<div id="assessment-schedule" class="section level3" number="1.7.1">
+<h3><span class="header-section-number">1.7.1</span> Assessment schedule</h3>
+<p>The usual examination rules and regulations are applicable and all assessments are treated as
+exams (see subsections below). Requests for reconsideration of an assessment mark will only be
+granted at the time when an assessment is handed out and discussed.</p>
+<ul>
+<li>Test 1: Tuesday, 31 August 2021</li>
+<li>Test 2: Tuesday, 19 October 2021</li>
+<li>Aegrotats (sick tests): Sick tests will be scheduled within 7 to 10 days of the corresponding
+semester test.</li>
+<li>Exam: TBC</li>
+</ul>
+</div>
+<div id="pass-requirements-and-compilation-of-marks" class="section level3" number="1.7.2">
+<h3><span class="header-section-number">1.7.2</span> Pass Requirements and Compilation of Marks</h3>
+<p>The following assessment guidelines will be implemented for this module:</p>
+<ol style="list-style-type: decimal">
+<li>Weighting of assessments:</li>
+</ol>
+<ul>
+<li>Semester mark: Test 1 (40%) + Test 2 (40%) + Assignments (20%)= 100%</li>
+<li>Examination mark: Main Exam = 100%</li>
+<li>Final mark: 50% Semester + Exam 50% = 100%</li>
+</ul>
+<ol start="2" style="list-style-type: decimal">
+<li>Exam entrance requirements:</li>
+</ol>
+<ul>
+<li>A student must obtain a semester mark of at least 40% to gain entrance to the exam.</li>
+<li>A student must obtain at least 40% in his/her final summative assessment (exam or supplementary exam) to pass the module.</li>
+<li>A student must obtain a final mark of 40% to 49% to qualify for the supplementary exam.</li>
+</ul>
+<ol start="3" style="list-style-type: decimal">
+<li>Pass requirements:</li>
+</ol>
+<ul>
+<li>All assessments are compulsory.</li>
+<li>The pass mark for any assessment (test, tutorial, assignment, project, etc.) is 50%. A distinction is a mark 75%.</li>
+<li>When a traditional examination or summative assessment is used as a last assessment, the student passes a module subject to obtaining a final calculated mark of at least 50%.</li>
+<li>The final mark for a supplementary summative assessment is capped at 50%.</li>
+</ul>
+</div>
+</div>
+<div id="rules-and-procedure-for-absence-from-an-assessment" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Rules and Procedure for Absence from an Assessment</h2>
+<p>A student may be granted a special assessment opportunity if he/she applies within 7 working days subsequent to the original date of assessment missed. A student must submit a completed online application form for the aegrotat test together with a written &amp; valid reason(s). The following cases will be considered and a supplementary assessment may be granted if the documentation as specified is delivered to your lecturer as stated above.</p>
+<table>
+<thead>
+<tr class="header">
+<th>Reason for absence</th>
+<th>Documentation as proof</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Illness</td>
+<td>The application form completed by student and medical practitioner with official stamp.</td>
+</tr>
+<tr class="even">
+<td>Compassionate reasons (Immediate family only)</td>
+<td>Relevant documentation such as death certificate etc. and a letter detailing circumstances and the student’s details must accompany the application.</td>
+</tr>
+<tr class="odd">
+<td>Legitimate reasons</td>
+<td>An affidavit signed and stamped by a commissioner of oaths, accompanied by a letter, detailing the specific circumstances and the student’s details.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>The discretion of the lecturer will play a major role in the making of the final decision on the
+supplementary assessment opportunity.</li>
+<li>Students must apply to write the supplementary exam or special supplementary exam
+only from CAA at the following URL: <a href="https://www.uj.ac.za/studyatUJ/Pages/Sick-notesubmission-form.aspx" class="uri">https://www.uj.ac.za/studyatUJ/Pages/Sick-notesubmission-form.aspx</a></li>
+</ul>
+<!----
+You can label chapter and section titles using `{#label}` after them, e.g., we can reference Chapter \@ref(intro). If you do not manually label them, there will be automatic labels anyway, e.g., Chapter \@ref(methods).
+
+Figures and tables with captions will be placed in `figure` and `table` environments, respectively.
+
+
+```r
+par(mar = c(4, 4, .1, .1))
+plot(pressure, type = 'b', pch = 19)
+```
+
+<div class="figure" style="text-align: center">
+<img src="APM8X13_files/figure-html/nice-fig-1.png" alt="Here is a nice figure!" width="80%" />
+<p class="caption">(\#fig:nice-fig)Here is a nice figure!</p>
+</div>
+
+Reference a figure by its code chunk label with the `fig:` prefix, e.g., see Figure \@ref(fig:nice-fig). Similarly, you can reference tables generated from `knitr::kable()`, e.g., see Table \@ref(tab:nice-tab).
+
+
+```r
+knitr::kable(
+  head(iris, 20), caption = 'Here is a nice table!',
+  booktabs = TRUE
+)
+```
+
+
+
+Table: (\#tab:nice-tab)Here is a nice table!
+
+| Sepal.Length| Sepal.Width| Petal.Length| Petal.Width|Species |
+|------------:|-----------:|------------:|-----------:|:-------|
+|          5.1|         3.5|          1.4|         0.2|setosa  |
+|          4.9|         3.0|          1.4|         0.2|setosa  |
+|          4.7|         3.2|          1.3|         0.2|setosa  |
+|          4.6|         3.1|          1.5|         0.2|setosa  |
+|          5.0|         3.6|          1.4|         0.2|setosa  |
+|          5.4|         3.9|          1.7|         0.4|setosa  |
+|          4.6|         3.4|          1.4|         0.3|setosa  |
+|          5.0|         3.4|          1.5|         0.2|setosa  |
+|          4.4|         2.9|          1.4|         0.2|setosa  |
+|          4.9|         3.1|          1.5|         0.1|setosa  |
+|          5.4|         3.7|          1.5|         0.2|setosa  |
+|          4.8|         3.4|          1.6|         0.2|setosa  |
+|          4.8|         3.0|          1.4|         0.1|setosa  |
+|          4.3|         3.0|          1.1|         0.1|setosa  |
+|          5.8|         4.0|          1.2|         0.2|setosa  |
+|          5.7|         4.4|          1.5|         0.4|setosa  |
+|          5.4|         3.9|          1.3|         0.4|setosa  |
+|          5.1|         3.5|          1.4|         0.3|setosa  |
+|          5.7|         3.8|          1.7|         0.3|setosa  |
+|          5.1|         3.8|          1.5|         0.3|setosa  |
+---->
+<!-- You can write citations, too. For example, we are using the **bookdown** package [@R-bookdown] in this sample book, which was built on top of R Markdown and **knitr** [@xie2015]. -->
+<!-- ```{python} -->
+<!-- x=1 -->
+<!-- print(x) -->
+<!-- ``` -->
+<!-- ## Some python examples -->
+<!-----
+$$\int e^{\beta_{1}} \cos{\left(\beta_{1} \right)}\, d\beta_{1}$$
+
+$$\int e^{\beta_{1}} \cos{\left(\beta_{1} \right)}\, d\beta_{1}$$
+---->
+<!-- ```{python, echo=FALSE} -->
+<!-- import sympy as sy -->
+<!-- from sympy import init_printing -->
+<!-- init_printing() -->
+<!-- import numpy as np -->
+<!-- from sympy.functions import sin,cos -->
+<!-- import matplotlib.pyplot as plt -->
+<!-- import seaborn as sns -->
+<!-- sns.set_style("darkgrid") -->
+<!-- # Define the variable and the function to approximate -->
+<!-- x = sy.Symbol('x') -->
+<!-- f = sin(x) -->
+<!-- # plt.show() -->
+<!-- # Factorial function -->
+<!-- def factorial(n): -->
+<!--     if n <= 0: -->
+<!--         return 1 -->
+<!--     else: -->
+<!--         return n*factorial(n-1) -->
+<!-- # Taylor approximation at x0 of the function 'function' -->
+<!-- def taylor(function,x0,n): -->
+<!--     i = 0 -->
+<!--     p = 0 -->
+<!--     while i <= n: -->
+<!--         p = p + (function.diff(x,i).subs(x,x0))/(factorial(i))*(x-x0)**i -->
+<!--         i += 1 -->
+<!--     return p -->
+<!-- # Plot results -->
+<!-- plt.figure() -->
+<!-- x_lims = [-5,5] -->
+<!-- x1 = np.linspace(x_lims[0],x_lims[1],800) -->
+<!-- y1 = [] -->
+<!-- # Approximate up until 10 starting from 1 and using steps of 2 -->
+<!-- for j in range(1,10,2): -->
+<!--     func = taylor(f,0,j) -->
+<!--     print('Taylor expansion at n='+str(j),func) -->
+<!--     for k in x1: -->
+<!--         y1.append(func.subs(x,k)) -->
+<!--     plt.plot(x1,y1,label='order '+str(j)) -->
+<!--     y1 = [] -->
+<!-- # Plot the function to approximate (sine, in this case) -->
+<!-- plt.plot(x1,np.sin(x1),label='sin of x') -->
+<!-- plt.xlim(x_lims) -->
+<!-- plt.ylim([-5,5]) -->
+<!-- plt.xlabel('x') -->
+<!-- plt.ylabel('y') -->
+<!-- plt.legend() -->
+<!-- plt.grid(True) -->
+<!-- plt.title('Taylor series approximation of sin(x)') -->
+<!-- plt.show() -->
+<!-- ``` -->
+<!-- ## Some other useful stuff -->
+<!-- ```{python, echo=FALSE} -->
+<!-- import numpy as np -->
+<!-- #import matplotlib.pyplot as plt -->
+<!-- #import seaborn as sns -->
+<!-- #sns.set_style('darkgrid', {'figure.facecolor': '(0,0,0,0)'})  -->
+<!-- #sns.set_context("talk") -->
+<!-- # Heat equation -->
+<!-- # double loop - stencil iterative style -->
+<!-- dt    = 0.0013 -->
+<!-- dx    = 0.05 -->
+<!-- N     = 50 -->
+<!-- f     = lambda x: np.sin(np.pi*x) -->
+<!-- c     = 1 -->
+<!-- alpha = 0 -->
+<!-- beta  = 0 -->
+<!-- def heat_eq(dt, dx, N, f, c, alpha, beta): -->
+<!--     mu           = dt/dx**2 -->
+<!--     tf           = N*dt -->
+<!--     tvals        = np.arange(0, tf, dt) -->
+<!--     xvals        = np.arange(0, 1 + dx, dx) -->
+<!--     tt           = len(tvals) -->
+<!--     xx           = len(xvals) -->
+<!--     u            = np.zeros((tt, xx)) -->
+<!--     u[0, :]      = f(xvals) -->
+<!--     u[:, 0]      = alpha -->
+<!--     u[:, xx - 1] = beta -->
+<!--     for row in range(0, tt - 1): -->
+<!--         for column in range(1, xx - 1): -->
+<!--             u[row + 1, column] = (1 - 2*mu)*u[row, column] + mu*u[row, column + 1] + mu*u[row, column - 1] -->
+<!--     return xvals, tvals, u -->
+<!-- (X, Y, Z1) = heat_eq(dt, dx, N, f, c, alpha, beta) -->
+<!-- ``` -->
+<!-- ```{python, include=FALSE} -->
+<!-- #import plotly.plotly as py -->
+<!-- from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot -->
+<!-- import plotly.graph_objs as go -->
+<!-- #init_notebook_mode(connected=True) -->
+<!-- data = [ -->
+<!--     go.Surface( -->
+<!--         x = X, -->
+<!--         y = Y, -->
+<!--         z = Z1, -->
+<!--         contours=go.surface.Contours( -->
+<!--             z=go.surface.contours.Z( -->
+<!--               show=True, -->
+<!--               usecolormap=True, -->
+<!--               project=dict(z=True) -->
+<!--             ) -->
+<!--         ) -->
+<!--     ) -->
+<!-- ] -->
+<!-- layout = go.Layout( -->
+<!--     #title = 'Tutorial', -->
+<!--     scene = dict( -->
+<!--                     xaxis = dict( -->
+<!--                         title='x'), -->
+<!--                     yaxis = dict( -->
+<!--                         title='t'), -->
+<!--                     zaxis = dict( -->
+<!--                         title='u')), -->
+<!--     autosize=True, -->
+<!--     width=750, -->
+<!--     height=600, -->
+<!--     margin=dict( -->
+<!--         l=65, -->
+<!--         r=50, -->
+<!--         b=65, -->
+<!--         t=90 -->
+<!--     ) -->
+<!-- ) -->
+<!-- fig = go.Figure(data=data, layout=layout) -->
+<!-- plot(fig, filename='./plotly_output/eg_1.html', auto_open=False) -->
+<!-- fig.write_image('./plotly_output/eg_1.png') -->
+<!-- ``` -->
+<!-- ```{r, echo=FALSE} -->
+<!-- htmltools::includeHTML("./plotly_output/eg_1.html") -->
+<!-- ``` -->
+<!-- ```{r eval=knitr::is_latex_output(), echo=FALSE} -->
+<!-- knitr::include_graphics('./plotly_output/eg_1.png', dpi = NA) -->
+<!-- ``` -->
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="taylor-series-revisted.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": false,
+"twitter": false,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["APM8X13.pdf", "APM8X13.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
