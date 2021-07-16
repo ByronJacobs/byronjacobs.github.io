@@ -24,7 +24,7 @@
 <meta name="author" content="Byron Jacobs" />
 
 
-<meta name="date" content="2021-07-15" />
+<meta name="date" content="2021-07-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -178,7 +178,10 @@ div.csl-indent {
 </ul></li>
 <li class="chapter" data-level="1.8" data-path="intro.html"><a href="intro.html#rules-and-procedure-for-absence-from-an-assessment"><i class="fa fa-check"></i><b>1.8</b> Rules and Procedure for Absence from an Assessment</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="taylor-series-revisted.html"><a href="taylor-series-revisted.html"><i class="fa fa-check"></i><b>2</b> Taylor Series (Revisted)</a></li>
+<li class="chapter" data-level="2" data-path="taylor-series-revisted.html"><a href="taylor-series-revisted.html"><i class="fa fa-check"></i><b>2</b> Taylor Series (Revisted)</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="taylor-series-revisted.html"><a href="taylor-series-revisted.html#higher-order-and-more-accurate-approximations"><i class="fa fa-check"></i><b>2.1</b> Higher order and more accurate approximations</a></li>
+</ul></li>
 <li class="chapter" data-level="3" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html"><i class="fa fa-check"></i><b>3</b> Ordinary Differentiable Equations (ODEs)</a>
 <ul>
 <li class="chapter" data-level="3.1" data-path="ordinary-differentiable-equations-odes.html"><a href="ordinary-differentiable-equations-odes.html#initial-value-problems"><i class="fa fa-check"></i><b>3.1</b> Initial Value Problems</a>
@@ -257,7 +260,7 @@ div.csl-indent {
 <div class="theorem">
 <p><span id="thm:unlabeled-div-1" class="theorem"><strong>Theorem 2.1  </strong></span><em>Taylor’s thoerem for functions of one<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a> real variable</em> Assume that <span class="math inline">\(f(x)\)</span> has <span class="math inline">\(n+1\)</span> continuous derivatives for <span class="math inline">\(a \le x \le b\)</span>, and let <span class="math inline">\(x_0 \in [a,b]\)</span> then
 <span class="math display">\[
-f(x) = p_n(x) + R_n(x), \quad a \le x \le b,
+f(x) = p_n(x) + R_n(x), \quad a \le x \le b, 
 \]</span>
 where
 <span class="math display">\[
@@ -272,10 +275,18 @@ where <span class="math inline">\(c_x\)</span> is an unknown point between <span
 <!-- This is a `theorem` environment that can contain **any** _Markdown_ syntax. -->
 </div>
 <p>This result may be interpreted in a number of ways. The first illustrates that, if a function (and all necessary derivatives) are known at a <strong>point</strong> then the function can be reconstructed anywhere in the domain. Consider,</p>
-<p><span class="math display">\[\begin{equation}
-  f(x) = f(x_0) + (x-x_0)f&#39;(x_0) + \frac{(x-x_0)^2}{2!} f&#39;&#39;(x_0) + \mathcal{O}{(x-x_0)^3}.
+<p><span class="math display" id="eq:Taylor1">\[\begin{equation}
+  f(x) = f(x_0) + (x-x_0)f&#39;(x_0) + \frac{(x-x_0)^2}{2!} f&#39;&#39;(x_0) + \mathcal{O}{(x-x_0)^3}. \tag{2.1}
 \end{equation}\]</span></p>
 <p>if <span class="math inline">\(f(x_0), f&#39;(x_0), \ldots\)</span> are given <span class="math inline">\(f(x)\)</span> can be found for any value of <span class="math inline">\(x\)</span>. Obviously, in practice, we can’t know arbitrarily many function (and derivative) values. As such, we will incur an error in our approximation which is proportional to the distance between <span class="math inline">\(x\)</span> and <span class="math inline">\(x_0\)</span>, shown explicitly by the <span class="math inline">\(\mathcal{O}\)</span> term.</p>
+<p>The second interpretation of Taylor’s series is allowing one to define the relationship between a function’s derivatives and discrete sampling of the function. This will form the basis of constructing finite difference methods, by allowing us to <strong>discretise</strong> differential operators. With appropriate substitution we have
+<span class="math display" id="eq:Taylor2">\[\begin{equation}
+  f(x+\Delta x) = f(x) + \Delta x f&#39;(x) + \frac{\Delta x^2}{2!} f&#39;&#39;(x) + \ldots + \mathcal{O}(\Delta x^n), \tag{2.2}
+\end{equation}\]</span>
+rearranging we find,
+<span class="math display" id="eq:Taylor3">\[\begin{equation}
+  f&#39;(x) = \frac{f(x+\Delta x) -  f(x)}{\Delta x} + \mathcal{O}(\Delta x). \tag{2.3}
+\end{equation}\]</span></p>
 
 <div class="example">
 <p><span id="exm:unnamed-chunk-6" class="example"><strong>Example 2.1  </strong></span> Consider <span class="math inline">\(f(x) = e^x\)</span>, then <span class="math inline">\(f^{(n)}(x) = e^x \quad \forall n\)</span>. Find the series approximation to <span class="math inline">\(f(0.25)\)</span> using four terms of Taylor’s series, recalling that
@@ -303,17 +314,9 @@ Where the exact value is <span class="math inline">\(e^{0.25} = 1.28403\)</span>
 <span id="cb1-10"><a href="taylor-series-revisted.html#cb1-10" aria-hidden="true" tabindex="-1"></a>res <span class="op">=</span> taylorExp(n,dx)</span>
 <span id="cb1-11"><a href="taylor-series-revisted.html#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f&quot;for n = </span><span class="sc">{n}</span><span class="ss"> and dx = </span><span class="sc">{dx}</span><span class="ss"> we get, </span><span class="sc">{</span>res<span class="sc">}</span><span class="ss">.&quot;</span>)</span></code></pre></div>
 <pre><code>## for n = 4 and dx = 0.25 we get, 1.2838541666666667.</code></pre>
-<p>The second interpretation of Taylor’s series is allowing one to define the relationship between a function’s derivatives and discrete sampling of the function. This will form the basis of constructing finite difference methods, by allowing us to <strong>discretise</strong> differential operators. With appropriate substitution we have
-<span class="math display">\[\begin{equation}
-  f(x+\Delta x) = f(x) + \Delta x f&#39;(x) + \frac{\Delta x^2}{2!} f&#39;&#39;(x) + \ldots + \mathcal{O}(\Delta x^n),
-\end{equation}\]</span>
-rearranging we find,
-<span class="math display">\[\begin{equation}
-  f&#39;(x) = \frac{f(x+\Delta x) -  f(x)}{\Delta x} + \mathcal{O}(\Delta x).
-\end{equation}\]</span></p>
 
 <div class="exercise">
-<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.1  </strong></span> Verify the order accuracy in the above.
+<span id="exr:unnamed-chunk-8" class="exercise"><strong>Exercise 2.1  </strong></span> Verify the order accuracy of the approximation to the first derivative in the notes above.
 </div>
 
 <div class="exercise">
@@ -326,6 +329,50 @@ rearranging we find,
 </div>
 <pre><code>## for n = 5 and dx = 0.4 we get, 0.3894183423097002.</code></pre>
 
+<div class="exercise">
+<span id="exr:unnamed-chunk-12" class="exercise"><strong>Exercise 2.4  </strong></span> Using the Taylor expansion of <span class="math inline">\(f(x+\Delta x)\)</span> and <span class="math inline">\(f(x-\Delta x)\)</span> construct an approximation of <span class="math inline">\(f&#39;&#39;(x)\)</span> that is <span class="math inline">\(\mathcal{O}(\Delta x^2)\)</span>.
+</div>
+<div id="higher-order-and-more-accurate-approximations" class="section level2" number="2.1">
+<h2><span class="header-section-number">2.1</span> Higher order and more accurate approximations</h2>
+<p>We now consider how one might use the Taylor series to construct an approximation to the second derivative of a function, <span class="math inline">\(f&#39;&#39;(x)\)</span>. Making <span class="math inline">\(f&#39;&#39;(x)\)</span> the subject of the formula in <a href="taylor-series-revisted.html#eq:Taylor1">(2.1)</a> we find that
+<span class="math display" id="eq:Taylor2nd1">\[\begin{equation}
+  f&#39;&#39;(x) = \frac{2}{\Delta x^2} \left( f(x+\Delta x) - f(x) -\Delta x f&#39;(x) \right) + \mathcal{O}(\Delta x), \tag{2.4}
+\end{equation}\]</span>
+which raises the issue of the approximation to the second derivative being dependent on the first. To overcome this issue consider the expansions
+<span class="math display" id="eq:Taylor2nd3" id="eq:Taylor2nd2">\[\begin{align}
+  f(x+\Delta x) &amp;= f(x) + \Delta x f&#39;(x) + \frac{\Delta x^2}{2!} f&#39;&#39;(x) + \ldots + \mathcal{O}(\Delta x^n), \tag{2.5} \\
+  f(x-\Delta x) &amp;= f(x) - \Delta x f&#39;(x) + \frac{\Delta x^2}{2!} f&#39;&#39;(x) - \ldots + \mathcal{O}(\Delta x^n). \tag{2.6}
+\end{align}\]</span>
+Adding the above two sequences, we can see that the first derivative terms cancel.
+<span class="math display" id="eq:Taylor2nd4">\[\begin{equation}
+  f(x+\Delta x) + f(x-\Delta x)= 2f(x) + 2\frac{\Delta x^2}{2!} f&#39;&#39;(x) + \mathcal{O}(\Delta x^4), \tag{2.7} 
+\end{equation}\]</span>
+paying <strong>careful attention</strong> to the order of leading error term. Now making <span class="math inline">\(f&#39;&#39;(x)\)</span> the subject of the formula, we arrive at the following approximation,
+<span class="math display" id="eq:Taylor2nd4">\[\begin{equation}
+  f&#39;&#39;(x)  = \frac{f(x+\Delta x) - 2f(x)+ f(x-\Delta x)}{\Delta x^2}+ \mathcal{O}(\Delta x^2). \tag{2.7} 
+\end{equation}\]</span>
+This same trick can be applied to derive approximation to <strong>both</strong> higher order derivatives (<span class="math inline">\(f^{(n)}(x)\)</span>) as well as approximations to derivatives with increased <strong>accuracy</strong>.</p>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-13" class="exercise"><strong>Exercise 2.5  </strong></span> Using the Taylor expansion of <span class="math inline">\(f(x+2\Delta x)\)</span>, <span class="math inline">\(f(x+\Delta x)\)</span>, <span class="math inline">\(f(x-\Delta x)\)</span> and <span class="math inline">\(f(x-2\Delta x)\)</span> construct an approximation of <span class="math inline">\(f&#39;(x)\)</span> that is <span class="math inline">\(\mathcal{O}(\Delta x^4)\)</span>.
+</div>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-14" class="exercise"><strong>Exercise 2.6  </strong></span> Using the Taylor expansion of <span class="math inline">\(f(x+2\Delta x)\)</span>, <span class="math inline">\(f(x+\Delta x)\)</span>, $f(x), <span class="math inline">\(f(x-\Delta x)\)</span> and <span class="math inline">\(f(x-2\Delta x)\)</span> construct an approximation of <span class="math inline">\(f&#39;&#39;(x)\)</span> that is <span class="math inline">\(\mathcal{O}(\Delta x^4)\)</span>.
+</div>
+
+<div class="exercise">
+<span id="exr:unnamed-chunk-15" class="exercise"><strong>Exercise 2.7  </strong></span> Using the Taylor expansion of <span class="math inline">\(f(x)\)</span>, <span class="math inline">\(f(x+\Delta x)\)</span>, <span class="math inline">\(f(x+2\Delta x)\)</span> and <span class="math inline">\(f(x+3\Delta x)\)</span> what is the best order accuracy one can achieve for the approximation of <span class="math inline">\(f&#39;&#39;(x)\)</span>?
+</div>
+<p>Notice that asymmetric stencils are unable to achieve the same order accuracy as their symmetric counterparts. Fornberg <span class="citation">(<a href="#ref-fornberg1998classroom" role="doc-biblioref">Fornberg 1998</a>)</span> presents a formula for deriving the coefficients for an arbitrary order derivative to arbitrary accuracy for a given stencil. The paper can be found <a href="https://epubs.siam.org/doi/pdf/10.1137/S0036144596322507?casa_token=UQaU7bYbDwEAAAAA:DDCX5jx8elkDZvwxSRkyU3s1Ad3jrF9PE0wvBuzFX7RDuja7fSLYSjg9iE7P0YCEOfSiu1at5w">here</a>.</p>
+
+</div>
+</div>
+<h3>References</h3>
+<div id="refs" class="references csl-bib-body hanging-indent">
+<div id="ref-fornberg1998classroom" class="csl-entry">
+Fornberg, Bengt. 1998. <span>“Classroom Note: Calculation of Weights in Finite Difference Formulas.”</span> <em>SIAM Review</em> 40 (3): 685–91.
+</div>
 </div>
 <div class="footnotes">
 <hr />
