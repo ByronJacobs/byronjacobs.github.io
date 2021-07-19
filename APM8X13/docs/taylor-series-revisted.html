@@ -24,7 +24,7 @@
 <meta name="author" content="Byron Jacobs" />
 
 
-<meta name="date" content="2021-07-17" />
+<meta name="date" content="2021-07-19" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -348,8 +348,8 @@ Adding the above two sequences, we can see that the first derivative terms cance
   f(x+\Delta x) + f(x-\Delta x)= 2f(x) + 2\frac{\Delta x^2}{2!} f&#39;&#39;(x) + \mathcal{O}(\Delta x^4), \tag{2.7} 
 \end{equation}\]</span>
 paying <strong>careful attention</strong> to the order of leading error term. Now making <span class="math inline">\(f&#39;&#39;(x)\)</span> the subject of the formula, we arrive at the following approximation,
-<span class="math display" id="eq:Taylor2nd4">\[\begin{equation}
-  f&#39;&#39;(x)  = \frac{f(x+\Delta x) - 2f(x)+ f(x-\Delta x)}{\Delta x^2}+ \mathcal{O}(\Delta x^2). \tag{2.7} 
+<span class="math display" id="eq:Taylor2nd5">\[\begin{equation}
+  f&#39;&#39;(x)  = \frac{f(x+\Delta x) - 2f(x)+ f(x-\Delta x)}{\Delta x^2}+ \mathcal{O}(\Delta x^2). \tag{2.8} 
 \end{equation}\]</span>
 This same trick can be applied to derive approximation to <strong>both</strong> higher order derivatives (<span class="math inline">\(f^{(n)}(x)\)</span>) as well as approximations to derivatives with increased <strong>accuracy</strong>.</p>
 
