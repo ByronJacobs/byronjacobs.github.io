@@ -1,5 +1,5 @@
 
-## Welcome to my GitHub Page
+## Welcome!
 
 My name is Byron Jacobs, I have held Associate Professor positions at two Universities in Johannesburg and currently hold a visiting researcher position at the [University of Johannesburg](https://pure.uj.ac.za/en/persons/byron-jacobs/).
 My research is primarily focused on 
