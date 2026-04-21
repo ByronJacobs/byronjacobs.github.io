@@ -15,4 +15,4 @@ My research is primarily focused on
  - [UJ Profile](https://www.uj.ac.za/contact/Pages/Byron-Jacobs.aspx)
 
 ### My CV
- - [Academic CV]()
+ - [Academic CV](https://github.com/ByronJacobs/byronjacobs.github.io/blob/master/docs/Byron-Jacobs-CV.pdf)
