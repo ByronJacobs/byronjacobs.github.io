@@ -1,4 +1,12 @@
-title: Prof Byron Jacobs
-description: A hub for my online profiles. 
+
+title: Byron Jacobs, PhD
+description: Applied Mathematician | Chief Science Officer | ML Architect
 logo: https://byronjacobs.github.io/images/ProfilePic.jpg
 theme: jekyll-theme-minimal
+
+# Social Links (Minimal theme automatically adds these to the sidebar)
+github_username: ByronJacobs
+linkedin_username: byron-jacobs-b9531a24
+
+# Analytics (Optional, but good for tracking recruiter traffic)
+google_analytics: [Your-UA-ID]
