@@ -15,7 +15,7 @@ I hold a visiting research position at the [University of Johannesburg](https://
 
 ### 🛠 Technical Stack
 * **Languages:** Python (Expert), Mathematica, MATLAB.
-* **Core Domains:** Applied Machine Learning, Numerical Analysis and Bio-inspired Modelling.
+* **Core Domains:** Applied Machine Learning, Bio-inspired Mathematical Modelling, Numerical Analysis and Data Driven Problem Solving.
 * **Cloud & Infrastructure:** Architecture and deployment on AWS and GCP.
 
 ### 🌐 Global Reach
