@@ -1,6 +1,6 @@
 # Byron Jacobs, PhD
 
-**Applied Mathematician | Chief Science Officer | ML Architect**
+**Applied Mathematician** | **Chief Science Officer** | ** ML Architect**
 
 I am an Applied Mathematician and ML Expert with over 14 years of experience bridging the gap between rigorous scientific methodology and high-stakes industrial problems. Currently, I serve as the **Chief Science Officer and Co-Founder of [VitruvianMD](vitruvianmd.com)**, where I lead the development of patented, AI-driven diagnostic platforms.
 
