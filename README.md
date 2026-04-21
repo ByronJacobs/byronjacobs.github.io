@@ -2,7 +2,7 @@
 
 **Applied Mathematician | Chief Science Officer | ML Architect**
 
-I am an Applied Mathematician and ML Expert with over 14 years of experience bridging the gap between rigorous scientific methodology and high-stakes industrial problems. Currently, I serve as the **Chief Science Officer and Co-Founder of VitruvianMD**, where I lead the development of patented, AI-driven diagnostic platforms.
+I am an Applied Mathematician and ML Expert with over 14 years of experience bridging the gap between rigorous scientific methodology and high-stakes industrial problems. Currently, I serve as the **Chief Science Officer and Co-Founder of [VitruvianMD](vitruvianmd.com)**, where I lead the development of patented, AI-driven diagnostic platforms.
 
 I hold a visiting research position at the [University of Johannesburg](https://pure.uj.ac.za/en/persons/byron-jacobs/) and have held Associate Professor positions at both UJ and the University of the Witwatersrand.
 
