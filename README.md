@@ -10,7 +10,7 @@ I hold a visiting research position at the [University of Johannesburg](https://
 
 ### 🚀 Innovation & Impact
 * **Medtech AI:** Architected a bespoke ML framework for sperm DNA fragmentation, leading to international patent filings and global clinical deployment.
-* **Deep Learning:** Principal Investigator for the **Bill & Melinda Gates Foundation** LLM Grand Challenge, focused on strengthening health modelling in Africa.
+* **Deep Learning:** Principal Investigator for the Bill & Melinda Gates Foundation LLM Grand Challenge, focused on strengthening health modelling in Africa.
 * **Numerical Expertise:** Specialist in Fractional and Partial Differential Equations (PDEs), developing novel schemes for complex signal and image processing.
 
 ### 🛠 Technical Stack
