@@ -28,7 +28,7 @@ I have cultivated a world-class research network with visiting appointments and 
 
 ### 📂 Professional Links
 - 📄 **[Download my Resume](https://github.com/ByronJacobs/byronjacobs.github.io/raw/master/docs/Byron-Resume.pdf)**
-- 🎓 **[Academic CV](https://github.com/ByronJacobs/byronjacobs.github.io/blob/master/docs/Byron-Jacobs-CV.pdf)**
+- 🎓 **[Academic CV](https://github.com/ByronJacobs/byronjacobs.github.io/raw/master/docs/Byron-Jacobs-CV.pdf)**
 - 🔬 **[Google Scholar](https://scholar.google.com/citations?user=HHgQJqwAAAAJ&hl=en&oi=sra)**
 - 📺 **[YouTube / Technical Lectures](https://www.youtube.com/user/5mjacbyr/videos)**
 - 💼 **[LinkedIn Profile](https://www.linkedin.com/in/byron-jacobs-b9531a24/)**
