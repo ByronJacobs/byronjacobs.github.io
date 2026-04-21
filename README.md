@@ -11,7 +11,6 @@ My research is primarily focused on
 ### Where to find me
  - [Google Scholar](https://scholar.google.com/citations?user=HHgQJqwAAAAJ&hl=en&oi=sra)
  - [YouTube](https://www.youtube.com/user/5mjacbyr/videos)
- - on Twitter [@ByronJacobsWITS](https://twitter.com/ByronJacobsWITS)
  - [UJ Profile](https://www.uj.ac.za/contact/Pages/Byron-Jacobs.aspx)
 
 ### My CV
